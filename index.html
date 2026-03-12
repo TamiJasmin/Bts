@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BTS Alert Argentina</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="layout">
+      <aside class="sidebar">
+        <div class="brand">
+          <p class="tag">ARMY ARGENTINA</p>
+          <h1>BTS Alert</h1>
+        </div>
+
+        <nav>
+          <p class="nav-title">Módulos</p>
+          <a href="#dashboard">📊 Dashboard</a>
+          <a href="#news">📰 Últimas noticias</a>
+          <a href="#alerts">🔔 Centro de alertas</a>
+          <a href="#checklist">✅ Checklist entradas</a>
+          <a href="#sources">🌐 Fuentes oficiales</a>
+        </nav>
+
+        <div class="sidebar-actions">
+          <button id="notifyBtn">Activar notificaciones</button>
+          <button id="testAlertBtn" class="ghost">Probar alerta</button>
+          <p id="notifyMsg" aria-live="polite"></p>
+        </div>
+      </aside>
+
+      <main class="content">
+        <section id="dashboard" class="card">
+          <h2>Dashboard</h2>
+          <p class="hint">Resumen rápido de tu estado para no perder entradas en Argentina.</p>
+          <div class="stats-grid">
+            <article>
+              <small>Alertas detectadas</small>
+              <strong id="statAlerts">0</strong>
+            </article>
+            <article>
+              <small>Noticias recientes</small>
+              <strong id="statNews">0</strong>
+            </article>
+            <article>
+              <small>Tareas checklist completas</small>
+              <strong id="statTasks">0/0</strong>
+            </article>
+            <article>
+              <small>Próxima revisión</small>
+              <strong id="statNextScan">-</strong>
+            </article>
+          </div>
+        </section>
+
+        <section id="news" class="card">
+          <div class="section-header">
+            <h2>Últimas noticias</h2>
+            <button id="scanNowBtn" class="ghost">Actualizar ahora</button>
+          </div>
+          <p id="alertStatus">Estado: pendiente de configuración.</p>
+          <ul id="newsList" class="alerts-list"></ul>
+        </section>
+
+        <section id="alerts" class="card">
+          <h2>Centro de alertas (Argentina)</h2>
+          <p class="hint">
+            Te avisa cuando hay coincidencias de entradas, cambios de conciertos o agenda para Argentina.
+          </p>
+
+          <form id="alertForm" class="alert-form">
+            <label>
+              Palabras clave (separadas por coma)
+              <input
+                id="keywordsInput"
+                type="text"
+                value="argentina,buenos aires,entradas,tickets,concierto,show,agenda,fecha"
+              />
+            </label>
+
+            <label>
+              Revisar cada (minutos)
+              <input id="intervalInput" type="number" min="1" max="60" value="10" />
+            </label>
+
+            <button type="submit">Guardar configuración</button>
+          </form>
+
+          <h3>Alertas activas</h3>
+          <ul id="alertsList" class="alerts-list"></ul>
+        </section>
+
+        <section id="checklist" class="card">
+          <h2>Checklist para conseguir entradas sí o sí</h2>
+          <div id="checklistContainer" class="checklist"></div>
+        </section>
+
+        <section id="sources" class="card">
+          <h2>Fuentes oficiales para novedades BTS</h2>
+          <ul>
+            <li><a href="https://weverse.io" target="_blank" rel="noreferrer">Weverse</a></li>
+            <li><a href="https://x.com/bts_bighit" target="_blank" rel="noreferrer">@bts_bighit (X)</a></li>
+            <li><a href="https://ibighit.com/bts/eng/" target="_blank" rel="noreferrer">Sitio oficial BTS</a></li>
+            <li><a href="https://www.instagram.com/bts.bighitofficial/" target="_blank" rel="noreferrer">Instagram oficial</a></li>
+          </ul>
+        </section>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
