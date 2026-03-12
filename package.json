@@ -1,0 +1,12 @@
+{
+  "name": "bts-alert-argentina",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Sitio de alertas BTS para Argentina",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
